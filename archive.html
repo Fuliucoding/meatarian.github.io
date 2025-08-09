@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meatarian Archive</title>
+    <style>
+        body {
+            background: #111;
+            color: #ffffff;
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+        }
+        header {
+            background: #222;
+            padding: 1em 0;
+            text-align: center;
+            border-bottom: 2px solid rgb(255, 0, 0);
+        }
+        header h1 {
+            margin: 0;
+            color: rgb(255, 0, 0);
+        }
+        main {
+            padding: 2em;
+            display: flex;
+            justify-content: center;
+        }
+        .name-list a {
+
+            text-decoration: none;
+            color: rgb(255, 0, 0);
+            border-bottom: 1px solid rgb(255, 0, 0);
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s;
+        }
+        .name-list a:hover {
+            background: #222;
+            color: lightblue;
+        }
+        .name-list a:last-child {
+            border-bottom: none;
+        }
+        footer {
+            background: #222;
+            color: rgb(255, 0, 0);
+            text-align: center;
+            padding: 0.3em 0;
+            border-top: 2px solid rgb(255, 0, 0);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .link-broken {
+        color: grey;
+        font-style: italic;
+        font-weight: normal;
+        }
+         nav {
+            display: flex;
+            justify-content: center;
+            background: #191919;
+            border-bottom: 1px solid #de0000;
+        }
+        nav a {
+            color: #fffefe;
+            text-decoration: none;
+            padding: 1em 2em;
+            font-weight: bold;
+            border-right: 1px solid #de0000;
+        }
+        nav a:last-child {
+            border-right: none;
+        }
+        nav a:hover {
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meatarian Archive</h1>
+    </header>
+
+    <main>
+    <div class="scroll-container">
+        <div class="name-list" id="nameList"></div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2055 Meatarian.org</p>
+</footer>
+
+<script>
+const names = [
+    "Ethan Black", "Maya Chen", "Liam Torres", "Ava Smith", "Noah Johnson",
+    "Sophia Davis", "Jackson Lee", "Isabella Moore", "Lucas Taylor", "Mia Martinez",
+    "Oliver Brown", "Amelia White", "Elijah Harris", "Charlotte Clark", "James Lewis",
+    "Benjamin Walker", "Harper Hall", "Henry Allen", "Evelyn Young", "Alexander King",
+    "Sebastian Wright", "Ella Scott", "Mateo Green", "Aria Adams", "Daniel Baker",
+    "Scarlett Nelson", "David Wong", "Chloe Perez", "Michael Carter", "Victoria Mitchell",
+    "Mason Roberts", "Grace Turner", "Logan Phillips", "Zoey Campbell", "Leo Parker",
+    "Layla Evans", "Jack Edwards", "Lily Collins", "Owen Stewart", "Hannah Sanchez",
+    "Wyatt Morris", "Nora Rogers", "Gabriel Reed", "Addison Cook", "Caleb Morgan",
+    "Riley Bell", "Samuel Murphy", "Ellie Bailey", "Carter Rivera", "Paisley Cooper",
+    "Isaac Richardson", "Penelope Cox", "Grayson Howard", "Lillian Ward", "Luke Torres",
+    "Aubrey Peterson", "Julian Gray", "Zoe Ramirez", "David Miller", "Levi James",
+    "Camila Hughes", "Matthew Long", "Savannah Foster", "David Clark", "Joseph Ross",
+    "Avery Sanders", "Mateo Price", "Eleanor Butler", "David Martinez", "Hudson Simmons",
+    "Mila Foster", "Asher Bryant", "Skylar Barnes", "David Bailey", "Lincoln Russell",
+    "Lucy Griffin", "Christopher Diaz", "Natalie Hayes", "Jaxon Myers", "Brooklyn Ford",
+    "Ezra Hamilton", "Leah Graham", "Parker Sullivan", "Madison Wallace", "Josiah Woods",
+    "Stella West", "David Hill", "Jonathan Stone", "Hazel Fox", "Colton Banks", "Aurora Boyd"
+];
+
+const listContainer = document.getElementById("nameList");
+
+names.forEach(name => {
+    const item = document.createElement("div");
+    item.className = "name-item";
+
+    if (name === "David Wong") {
+        const link = document.createElement("a");
+        link.href = "DavidWong.html";
+        link.className = "name";
+        link.textContent = name;
+        item.appendChild(link);
+    } else {
+        const spanName = document.createElement("span");
+        spanName.className = "name";
+        spanName.textContent = name;
+        const broken = document.createElement("span");
+        broken.className = "link-broken";
+        broken.textContent = "(link broken)";
+        item.appendChild(spanName);
+        item.appendChild(broken);
+    }
+
+    listContainer.appendChild(item);
+});
+</script>
+<br>
+<br>
+<br>
+<br>
+
+    <footer>
+         <nav>
+            <a href="about.html">About</a>
+        </nav>
+    </footer>
+</body>
+</html>

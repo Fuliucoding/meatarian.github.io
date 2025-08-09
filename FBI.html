@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FBI document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #111;
+            color: #ffffff;
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+        }
+        p {
+            color: #de0000;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        header {
+            background: #222;
+            padding: 1em 0;
+            text-align: center;
+            border-bottom: 2px solid rgb(255, 0, 0);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #191919;
+            border-bottom: 1px solid rgb(255, 0, 0);
+        }
+        nav a {
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+            padding: 1em 2em;
+            font-weight: bold;
+            border-right: 1px solid rgb(255, 0, 0);
+        }
+        nav a:last-child {
+            border-right: none;
+        }
+        nav a:hover {
+            background: #333;
+            color: #fff;
+        }
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+        .columns {
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+            margin-bottom: 2em;
+        }
+        .column-box {
+            background: #191919;
+            border: 1px solid #de0000;
+            border-radius: 6px;
+            padding: 1em;
+            flex: 1;
+            color: #de0000;
+        }
+        article h2 {
+            font-size: 1.3em;
+            margin-top: 1.5em;
+            color: #fff;
+            border-left: 4px solid #de0000;
+            padding-left: 0.5em;
+        }
+        article p {
+            line-height: 1.7;
+            margin-bottom: 1.2em;
+            color: #de0000;
+        }
+        .case-image {
+            width: 15%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+        .news-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+        footer {
+            background: #222;
+            color: rgb(255, 0, 0);
+            text-align: center;
+            padding: 1em 0;
+            border-top: 2px solid rgb(255, 0, 0);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/Meatarians.png" alt="Case Image" class="case-image">
+        <h2 style="color:#de0000">CASE #120934: Leaked Documents</h2>
+    </header>
+   <main>
+    <article>
+        <h2>FBI REPORT</h2>
+        <p>
+            Part of David Wong's meat plant document leak, 22th of January, 2055.
+            <br>
+            Click to reveal.
+        </p>
+    </article>
+    <div style="position: relative; display: inline-block; width: 50%; margin-bottom: 1em;">
+        <img src="images/FBI.jpg" alt="Case Image" class="news-image" style="width:100%; height:auto;">
+        <!-- Redacted area: "Alex Thompson" -->
+        <div class="redact" style="position: absolute; left: 17%; top: 30%; width: 28%; height: 6%; background: #000; cursor: pointer; transition: height 0.7s cubic-bezier(.77,0,.18,1);"></div>
+        <!-- Redacted area: "instituted a series of..." -->
+        <div class="redact" style="position: absolute; left: 12%; top: 73%; width: 76%; height: 5.5%; background: #000; cursor: pointer; transition: height 0.7s cubic-bezier(.77,0,.18,1);"></div>
+    </div>
+</main>
+<script>
+    // Roll-up animation for redacted areas
+    document.querySelectorAll('.redact').forEach(function(div) {
+        div.addEventListener('click', function() {
+            div.style.height = '0';
+            div.style.pointerEvents = 'none';
+            setTimeout(() => div.style.display = 'none', 800);
+        });
+    });
+</script>  
+</body>
+</html>

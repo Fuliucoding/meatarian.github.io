@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Meatarian.org</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            background: #111;
+            color: #fff;
+        }
+        .parallax {
+            background-image: url(images/pork\ illustration2.jpg);
+            min-height: 350px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            max-width: 700px;
+            margin: -80px auto 0 auto;
+            background: #191919;
+            box-shadow: 0 8px 32px #0008;
+            border-radius: 8px;
+            padding: 2em;
+            position: relative;
+            z-index: 2;
+            border: 1px solid #de0000;
+        }
+        header {
+            text-align: center;
+            padding: 2em 0 1em 0;
+            background: #222;
+            border-bottom: 2px solid #de0000;
+        }
+        .headline {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            color: #de0000;
+            letter-spacing: 2px;
+        }
+        .byline {
+            font-size: 1em;
+            color: #ff6666;
+            margin-bottom: 2em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #191919;
+            border-bottom: 1px solid #de0000;
+        }
+        nav a {
+            color: #fffefe;
+            text-decoration: none;
+            padding: 1em 2em;
+            font-weight: bold;
+            border-right: 1px solid #de0000;
+        }
+        nav a:last-child {
+            border-right: none;
+        }
+        nav a:hover {
+            background: #333;
+            color: #fff;
+        }
+        article h2 {
+            font-size: 1.3em;
+            margin-top: 1.5em;
+            color: #fff;
+            border-left: 4px solid #de0000;
+            padding-left: 0.5em;
+        }
+        article p {
+            line-height: 1.7;
+            margin-bottom: 1.2em;
+            color: #de0000;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background: #222;
+            border-top: 2px solid #de0000;
+            color: #de0000;
+            margin-top: 2em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .columns {
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+            margin-bottom: 2em;
+        }
+        .column-box {
+            background: #191919;
+            border: 1px solid #de0000;
+            border-radius: 6px;
+            padding: 1em;
+            flex: 1;
+            color: #de0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="headline">About Meatarian.org</div>
+        <p>This is meatarian backlog. A community dedicated to unravel the truth.</p>
+    </header>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 1em; margin-top: 0.5em;">
+    <p style="margin: 0; color: #ce4f4f;">Cool music to listen while you explore -></p>
+    <button id="toggle-audio-btn"
+    style="background:#191919; color:#de0000; border:1px solid #de0000; border-radius:6px; padding:0.5em 1.5em; font-size:1em; cursor:pointer; margin-bottom: 10px;">
+    ▶ Play Background Audio
+    </button>
+</div>
+<audio id="bg-audio" src="sound/Iain COLLAB BEAT.mp3" loop hidden></audio>
+<script>
+    const audio = document.getElementById('bg-audio');
+    const btn = document.getElementById('toggle-audio-btn');
+    let isPlaying = false;
+
+    btn.onclick = function() {
+        if (audio.paused) {
+            audio.play();
+            btn.textContent = '■ Stop Audio';
+            isPlaying = true;
+        } else {
+            audio.pause();
+            btn.textContent = '▶ Play Background Audio';
+            isPlaying = false;
+        }
+    };
+</script>
+    <div class="parallax"></div>
+    <div class="container">
+        <article>
+            <nav>
+       <a href="archive.html" style="font-size: 50px;">Enter Archive</a>
+    </nav>
+            <h2>The Rise of Meatarians</h2>
+            <p>
+               An anti-veggie-meat organisation called the Meatarians was formed to retaliate against the oppressive ban of real meat products and to fight for the freedom of food consumption. 
+               <br>
+                <br>
+               LIVECORE corporation is the leading company of meat plant production, manipulating the trajectory of society towards veggie meat and away from the real meat.
+               <br>
+                <br>
+               Meatarians launched a large-scale coup d'etat against LiveCore headquarters; up to 5000 members were involved. This led to several conflicts between Meatarians and LiveCore. 
+               However, this conflict ultimately ended with anonymous bombings of Meatarian bases and hideouts. With further assassinations of Meatarian leaders, many suspect that LiveCore was behind their downfall. 
+            </p>
+            <p>
+                <strong>Origins:</strong> Meatarian.org was created to reunite all meat believers and to unravel the truth LiveCore has hidden from us. 
+            </p>
+            <p>
+                <strong>The Impact:</strong> The remaining members of the Meatarians are still on the run, hiding among the broader fabric of society.
+            </p>
+            <h2>Looking Ahead</h2>
+            <p>
+                As we grow and expose more truths, our influence becomes an entity that Livecore cannot ignore. We must rise for justice. 
+            </p>
+        </article>
+    </div>
+    <div class="parallax"></div>
+    <footer>
+        <nav>
+            <a href="archive.html">Enter Archive</a>
+        </nav>
+    </footer>
+</body>
+</html>
